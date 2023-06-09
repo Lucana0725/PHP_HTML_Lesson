@@ -2,9 +2,10 @@
 class Menu {
   public $name;
 
-  // コンストラクタの定義
-  public function __construct() {
-    echo "1つのメニューが作られました";
+  // コンストラクタが$nameを取れるよう処理
+  public function __construct($name) {
+    // nameプロパティに引数の$nameを代入
+    $this->name = $name;
   }
 
 
@@ -13,16 +14,16 @@ class Menu {
   }
 
 }
-// Menuクラスのインスタンスの作成、各変数へ
-$curry = new Menu();
-echo '<br>';
-$pasta = new Menu();
-// 各変数のnameプロパティに対して値をセット
-$curry->name = "CURRY";
-echo '<br>';
-$pasta->name = "PASTA";
+// new Menuの引数に'CURRY', 'PASTA'を代入
+$curry = new Menu('CURRY');
+$pasta = new Menu('PASTA');
+
 // 各インスタンスに対してhelloメソッドを呼び出し
-$curry->hello();
-echo '<br>';
-$pasta->hello();
+// $curry->hello();
+// echo '<br>';
+// $pasta->hello();
 ?>
+
+<!-- 各<p>の中で各インスタンスのnameプロパティを呼び出す -->
+<p><?php echo $curry->name; ?></p>
+<p><?php echo $pasta->name; ?></p>
