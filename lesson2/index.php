@@ -14,14 +14,15 @@ class Menu {
   }
 
 }
-// new Menuの引数に'CURRY', 'PASTA'を代入
+
+$juice = new Menu('JUICE');
+$coffee = new Menu('COFFEE');
 $curry = new Menu('CURRY');
 $pasta = new Menu('PASTA');
 
-// 各インスタンスに対してhelloメソッドを呼び出し
-// $curry->hello();
-// echo '<br>';
-// $pasta->hello();
+// 配列の中に上記の4つのインスタンスを順に入れて、変数$menusに代入
+$menus = array($juice, $coffee, $curry, $pasta);
+
 ?>
 
 
@@ -39,7 +40,9 @@ $pasta = new Menu('PASTA');
     <h1 class="logo">Café Progate</h1>
     <div class="menu-items">
       <!-- 配列$menusの要素を変数$menuとするforeach文を書いてください -->
-      
+      <?php foreach ($menus as $menu): ?>
+        <h3><?php echo $menu->name; ?></h3>
+      <?php endforeach ?>
       
     </div>
   </div>
