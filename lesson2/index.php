@@ -21,11 +21,13 @@ require_once('Data.php');
     <div class="menu-items">
       <!-- 配列$menusの要素を変数$menuとするforeach文を書いてください -->
       <?php foreach ($menus as $menu): ?>
-        <!-- imgタグで画像を表示 -->
-        <img src="<?php echo $menu->image; ?>">
-        <h3><?php echo $menu->name; ?></h3>
-        <!-- pタグの中に価格を表示 -->
-        <p class="price"><?php echo $menu->price; ?></p>
+        <div class="menu-item">
+          <!-- imgタグで画像を表示 -->
+          <img src="<?php echo $menu->image; ?>">
+          <h3><?php echo $menu->name; ?></h3>
+          <!-- pタグの中に価格を表示 -->
+          <p class="price"><?php echo $menu->price; ?></p>
+        </div>
       <?php endforeach ?>
       
     </div>
