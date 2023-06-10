@@ -15,7 +15,12 @@ class Menu {
     $this->price = $price;
     $this->image = $image;
   }
-  
+
+  // 税込価格を返すメソッドを定義
+  public function getTaxIncludedPrice() {
+    return floor($this->price * 1.1);
+  }
+
 }
 
 ?>

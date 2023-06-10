@@ -26,7 +26,7 @@ require_once('Data.php');
           <img src="<?php echo $menu->image; ?>">
           <h3><?php echo $menu->name; ?></h3>
           <!-- pタグの中に価格を表示 -->
-          <p class="price"><?php echo $menu->price; ?></p>
+          <p class="price">¥<?php echo $menu->getTaxIncludedPrice(); ?>(税込み)</p>
         </div>
       <?php endforeach ?>
       
