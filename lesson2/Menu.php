@@ -3,18 +3,19 @@
 
 class Menu {
   public $name;
+  // $price, $imageというプロパティを定義
+  public $price;
+  public $image;
 
-  // コンストラクタが$nameを取れるよう処理
-  public function __construct($name) {
-    // nameプロパティに引数の$nameを代入
+
+  // コンストラクタに$price, $imageをもたせる
+  public function __construct($name, $price, $image) {
+    // 各プロパティに各引数を代入
     $this->name = $name;
+    $this->price = $price;
+    $this->image = $image;
   }
-
-
-  public function hello() {
-    echo "私は{$this->name}です";
-  }
-
+  
 }
 
 ?>
