@@ -6,6 +6,7 @@ class Menu {
   // $price, $imageというプロパティを定義
   private $price;
   private $image;
+  private $orderCount = 0;
 
 
   // コンストラクタに$price, $imageをもたせる
@@ -27,6 +28,14 @@ class Menu {
   }
   public function getImage() {
     return $this->image;
+  }
+  public function getOrderCount() {
+    return $this->orderCount;
+  }
+
+  // セッター
+  public function setOrderCount($orderCount) {
+    $this->orderCount = $orderCount;
   }
 
 }

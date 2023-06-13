@@ -28,6 +28,7 @@ require_once('Data.php');
           <h3><?php echo $menu->getName(); ?></h3>
           <!-- pタグの中に価格を表示 -->
           <p class="price">¥<?php echo $menu->getTaxIncludedPrice(); ?>(税込み)</p>
+          <p>注文数：<?php echo $menu->getOrderCount(); ?></p>
         </div>
       <?php endforeach ?>
       
