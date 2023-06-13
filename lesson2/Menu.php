@@ -2,10 +2,10 @@
 
 
 class Menu {
-  public $name;
+  private $name;
   // $price, $imageというプロパティを定義
-  public $price;
-  public $image;
+  private $price;
+  private $image;
 
 
   // コンストラクタに$price, $imageをもたせる
@@ -19,6 +19,14 @@ class Menu {
   // 税込価格を返すメソッドを定義
   public function getTaxIncludedPrice() {
     return floor($this->price * 1.1);
+  }
+
+  // ゲッター
+  public function getName() {
+    return $this->name;
+  }
+  public function getImage() {
+    return $this->image;
   }
 
 }

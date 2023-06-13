@@ -22,9 +22,10 @@ require_once('Data.php');
       <!-- 配列$menusの要素を変数$menuとするforeach文を書いてください -->
       <?php foreach ($menus as $menu): ?>
         <div class="menu-item">
-          <!-- imgタグで画像を表示 -->
-          <img src="<?php echo $menu->image; ?>">
-          <h3><?php echo $menu->name; ?></h3>
+          <!-- imgタグで画像を表示(ゲッターを使って) -->
+          <img src="<?php echo $menu->getImage(); ?>">
+          <!-- ゲッターを使って名前を表示 -->
+          <h3><?php echo $menu->getName(); ?></h3>
           <!-- pタグの中に価格を表示 -->
           <p class="price">¥<?php echo $menu->getTaxIncludedPrice(); ?>(税込み)</p>
         </div>
