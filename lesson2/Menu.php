@@ -17,10 +17,6 @@ class Menu {
     $this->image = $image;
   }
 
-  // 税込価格を返すメソッドを定義
-  public function getTaxIncludedPrice() {
-    return floor($this->price * 1.1);
-  }
 
   // ゲッター
   public function getName() {
@@ -37,6 +33,20 @@ class Menu {
   public function setOrderCount($orderCount) {
     $this->orderCount = $orderCount;
   }
+
+
+
+  // 税込価格を返すメソッドを定義
+  public function getTaxIncludedPrice() {
+    return floor($this->price * 1.1);
+  }
+
+  // 注文個数分の税込み合計価格を求めるメソッド
+  public function getTotalPrice() {
+    return $this->getTaxIncludedPrice() * $this->orderCount;
+  }
+
+
 
 }
 

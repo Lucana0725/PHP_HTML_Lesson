@@ -16,7 +16,11 @@ require_once('data.php');
     <h2>注文内容確認</h2>
     <?php foreach ($menus as $menu): ?>
       <!-- 変数$orderCountを定義、$_POSTで受け取った値を代入 -->
-      <?php $orderCount = $_POST[$menu->getName()]; ?>
+      <?php
+        $orderCount = $_POST[$menu->getName()];
+        // $menuに注文個数をセットする
+        $menu->setOrderCount($orderCount);
+      ?>
       <p class="order-amount">
         <!-- ここに、$menuのゲッターを用いてnameプロパティを表示 -->
         <?php echo $menu->getName(); ?>
@@ -25,6 +29,7 @@ require_once('data.php');
         <?php echo $orderCount; ?>
         個
       </p>
+      <p class="order-price"><?php echo $menu->getTotalPrice(); ?> 円</p>
     <?php endforeach ?>
   </div>
 </body>
