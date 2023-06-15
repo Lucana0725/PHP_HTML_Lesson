@@ -7,10 +7,8 @@ class Drink extends Menu {
 
   // コンストラクタ
   public function __construct($name, $price, $image, $type) {
-    $this->name = $name;
-    $this->price = $price;
-    $this->image = $image;
-    $this->type = $type;
+    // 親クラスMenuとの重複を削るためにparent::を導入
+    parent::__construct($name, $price, $image);
 
     // コンストラクタを使って$countの値を+1させる
     self::$count++;
