@@ -37,7 +37,9 @@ require_once('Data.php');
           <?php if($menu instanceof Drink): ?>
             <p class="menu-item-type"><?php echo $menu->getType(); ?></p>
           <?php else: ?>
-            <p>辛さ: <?php echo $menu->getSpiciness(); ?></p>
+            <?php for($i = 0; $i < $menu->getSpiciness(); $i++): ?>
+              <img class="icon-spiciness" src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/chilli.png">
+            <?php endfor ?>
           <?php endif ?>
 
           <!-- pタグの中に価格を表示 -->
