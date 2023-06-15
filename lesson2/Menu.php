@@ -7,6 +7,8 @@ class Menu {
   private $price;
   private $image;
   private $orderCount = 0;
+  // $countというpublicなクラスプロパティを初期値4で定義
+  public static $count = 4;
 
 
   // コンストラクタに$price, $imageをもたせる

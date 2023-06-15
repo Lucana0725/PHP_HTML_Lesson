@@ -18,10 +18,14 @@ require_once('Data.php');
 <body>
   <div class="menu-wrapper container">
     <h1 class="logo">Café Progate</h1>
+
+    <h3>メニュー：<?php echo Menu::$count; ?>品</h3>
+    
     <!-- formタグの追加 -->
     <form action="confirm.php" method="post">
       <div class="menu-items">
-        <?php foreach ($menus as $menu): ?>
+        
+      <?php foreach ($menus as $menu): ?>
         <div class="menu-item">
           <!-- imgタグで画像を表示(ゲッターを使って) -->
           <img src="<?php echo $menu->getImage(); ?>">
@@ -34,6 +38,7 @@ require_once('Data.php');
           <span>個</span>
         </div>
         <?php endforeach ?>
+        
       </div>
       <input type="submit" value="注文する">
     </form>
