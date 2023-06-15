@@ -7,8 +7,8 @@ class Menu {
   private $price;
   private $image;
   private $orderCount = 0;
-  // $countというpublicなクラスプロパティを初期値4で定義
-  public static $count = 4;
+  // クラスプロパティcountをprivateに
+  private static $count = 0;
 
 
   // コンストラクタに$price, $imageをもたせる
@@ -17,6 +17,9 @@ class Menu {
     $this->name = $name;
     $this->price = $price;
     $this->image = $image;
+
+    // コンストラクタを使って$countの値を+1させる
+    self::$count++;
   }
 
 
@@ -29,6 +32,9 @@ class Menu {
   }
   public function getOrderCount() {
     return $this->orderCount;
+  }
+  public static function getCount() {
+    return self::$count;
   }
 
   // セッター
