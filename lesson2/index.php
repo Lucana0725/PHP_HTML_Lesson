@@ -29,10 +29,16 @@ require_once('Data.php');
         <div class="menu-item">
           <!-- imgタグで画像を表示(ゲッターを使って) -->
           <img src="<?php echo $menu->getImage(); ?>">
+          
           <!-- ゲッターを使って名前を表示 -->
           <h3><?php echo $menu->getName(); ?></h3>
+          
+          <!-- 飲み物のタイプを表示 -->
+          <p class="menu-item-type"><?php echo $menu->getType(); ?></p>
+
           <!-- pタグの中に価格を表示 -->
           <p class="price">¥<?php echo $menu->getTaxIncludedPrice(); ?>(税込み)</p>
+          
           <!-- inputを使って入力ボックスの準備 -->
           <input type="text" value="0" name="<?php echo $menu->getName(); ?>">
           <span>個</span>
