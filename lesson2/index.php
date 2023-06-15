@@ -36,6 +36,8 @@ require_once('Data.php');
           <!-- 飲み物のタイプを表示(if, instanceofを使ってDrinkクラスのもののときのみ実行) -->
           <?php if($menu instanceof Drink): ?>
             <p class="menu-item-type"><?php echo $menu->getType(); ?></p>
+          <?php else: ?>
+            <p>辛さ: <?php echo $menu->getSpiciness(); ?></p>
           <?php endif ?>
 
           <!-- pタグの中に価格を表示 -->
