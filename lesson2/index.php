@@ -33,8 +33,10 @@ require_once('Data.php');
           <!-- ゲッターを使って名前を表示 -->
           <h3><?php echo $menu->getName(); ?></h3>
           
-          <!-- 飲み物のタイプを表示 -->
-          <p class="menu-item-type"><?php echo $menu->getType(); ?></p>
+          <!-- 飲み物のタイプを表示(if, instanceofを使ってDrinkクラスのもののときのみ実行) -->
+          <?php if($menu instanceof Drink): ?>
+            <p class="menu-item-type"><?php echo $menu->getType(); ?></p>
+          <?php endif ?>
 
           <!-- pタグの中に価格を表示 -->
           <p class="price">¥<?php echo $menu->getTaxIncludedPrice(); ?>(税込み)</p>
