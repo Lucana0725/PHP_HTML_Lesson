@@ -2,13 +2,13 @@
 
 
 class Menu {
-  private $name;
-  // $price, $imageというプロパティを定義
-  private $price;
-  private $image;
+  // Drinkクラスでも使用するので、name, price, image, countを private => protectedへ変更
+  protected $name;
+  protected $price;
+  protected $image;
   private $orderCount = 0;
   // クラスプロパティcountをprivateに
-  private static $count = 0;
+  protected static $count = 0;
 
 
   // コンストラクタに$price, $imageをもたせる
