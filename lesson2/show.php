@@ -6,6 +6,9 @@ $menuName = $_GET['name'];
 
 // Menuに対してfindByName()を使用。引数は$menusとクエリ文字列で渡ってきた文字列$menuName。
 $menu = Menu::findByName($menus, $menuName);
+
+// $menuに対して$reviewsを引数にgetReviewsメソッドを呼び出す
+$menuReviews = $menu->getReviews($reviews);
 ?>
 
 
@@ -45,10 +48,11 @@ $menu = Menu::findByName($menus, $menuName);
           <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/review.png" class='icon-review'>
           <h4>レビュー一覧</h4>
         </div>
-        <!-- foreachでレビューを回す -->
-        <?php foreach($reviews as $review): ?>
-          <h3><?php echo $review->getMenuName(); ?></h3>
-          <p><?php echo $review->getBody(); ?></p>
+        <!-- foreachでレビューを回す(元の$reviewsを$menuReviewsに書き換え) -->
+        <?php foreach($menuReviews as $review): ?>
+          <div class="review-list-item">
+            <p><?php echo $review->getBody(); ?></p>
+          </div>
         <?php endforeach ?>
         
       </div>

@@ -55,6 +55,26 @@ class Menu {
   }
 
 
+  // $reviewsから特定の$review**を取り出せるようにするためのメソッド
+  public function getReviews($reviews) {
+
+    // 先に該当する$reviewを格納する配列$reviewsForMenuを空で定義
+    $reviewsForMenu = array();
+    
+    // $reviewsに対して１つずつ処理をループ
+    foreach($reviews as $review) {
+      // $reviewsの各要素の商品名が、Menuのnameプロパティに該当するかどうかの条件分岐
+      if($review->getMenuName() == $this->name) {
+        $reviewsForMenu[] = $review;  // 該当したら$reviewsForMenuに代入
+      }
+    }
+    // foreachが終わったら、$reviewsForMenuを返す。
+    return $reviewsForMenu;
+    
+  }
+
+
+
   // show.php用 クエリ文字列から、クエリ文字列の商品名をプロパティとしてもつデータ($menus)をサーチする用のメソッド
   public static function findByName($menus, $name) {
     foreach($menus as $menu) {
@@ -64,6 +84,8 @@ class Menu {
     }
   }
 
+
+  
 
 
 }
