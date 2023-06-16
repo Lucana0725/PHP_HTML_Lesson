@@ -30,8 +30,8 @@ require_once('Data.php');
           <!-- imgタグで画像を表示(ゲッターを使って) -->
           <img src="<?php echo $menu->getImage(); ?>">
           
-          <!-- 名前にリンクを埋め込む -->
-          <a href="show.php">
+          <!-- 名前にリンクを埋め込む（クエリ文字を使って商品データを渡せるようにする） -->
+          <a href="show.php?name=<?php echo $menu->getName(); ?>">
             <!-- ゲッターを使って名前を表示 -->
             <h3><?php echo $menu->getName(); ?></h3>
           </a>
