@@ -55,6 +55,16 @@ class Menu {
   }
 
 
+  // show.php用 クエリ文字列から、クエリ文字列の商品名をプロパティとしてもつデータ($menus)をサーチする用のメソッド
+  public static function findByName($menus, $name) {
+    foreach($menus as $menu) {
+      if($menu->getName() == $name) {
+        return $menu;
+      }
+    }
+  }
+
+
 
 }
 
