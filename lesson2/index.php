@@ -30,8 +30,11 @@ require_once('Data.php');
           <!-- imgタグで画像を表示(ゲッターを使って) -->
           <img src="<?php echo $menu->getImage(); ?>">
           
-          <!-- ゲッターを使って名前を表示 -->
-          <h3><?php echo $menu->getName(); ?></h3>
+          <!-- 名前にリンクを埋め込む -->
+          <a href="show.php">
+            <!-- ゲッターを使って名前を表示 -->
+            <h3><?php echo $menu->getName(); ?></h3>
+          </a>
           
           <!-- 飲み物のタイプを表示(if, instanceofを使ってDrinkクラスのもののときのみ実行) -->
           <?php if($menu instanceof Drink): ?>
