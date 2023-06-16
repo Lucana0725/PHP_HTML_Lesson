@@ -3,6 +3,7 @@
 require_once('Drink.php');
 require_once('Food.php');
 require_once('Review.php');
+require_once('User.php');
 
 
 // 各々price, imageの値をセット
