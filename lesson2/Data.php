@@ -14,6 +14,12 @@ $pasta = new Food('PASTA', 1200, "https://s3-ap-northeast-1.amazonaws.com/progat
 // 配列の中に上記の4つのインスタンスを順に入れて、変数$menusに代入
 $menus = array($juice, $coffee, $curry, $pasta);
 
+// User関連
+$user1 = new User('suzuki', 'male');
+$user2 = new User('tanaka', 'female');
+
+$users = array($user1, $user2);
+
 
 // レビュー用のreviewインスタンス
 $review1 = new Review($juice->getName(), '果肉たっぷりのオレンジジュースです！');
