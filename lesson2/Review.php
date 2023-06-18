@@ -25,7 +25,7 @@ class Review {
   // レビューとレビュワーを紐付けるメソッド
   public function getUser($users) {
     foreach ($users as $user) {
-      if ($user->getName == $this->userName) {  // Userのユーザーネーム($name)とReviewのユーザーネーム($userName)が一致しているかどうか
+      if ($user->getName() == $this->userName) {  // Userのユーザーネーム($name)とReviewのユーザーネーム($userName)が一致しているかどうか
         return $user;  // 一致していれば、$userを返す
       }
     }

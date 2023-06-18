@@ -50,8 +50,19 @@ $menuReviews = $menu->getReviews($reviews);
         </div>
         <!-- foreachでレビューを回す(元の$reviewsを$menuReviewsに書き換え) -->
         <?php foreach($menuReviews as $review): ?>
+          <!-- $reviewに対して$usersを引数にgetUser()を呼び出し。 -->
+          <?php $user = $review->getUser($users); ?>
           <div class="review-list-item">
-            <p><?php echo $review->getBody(); ?></p>
+            <div class="review-user">
+              <?php if($user->getGender() == 'male'): ?>
+                <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/male.png" class='icon-user'>
+              <?php else: ?>
+                <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/female.png" class='icon-user'>
+              <?php endif ?>
+
+              <p><?php echo $user->getName(); ?></p>
+            </div>
+            <p class="review-text"><?php echo $review->getBody(); ?></p>
           </div>
         <?php endforeach ?>
         
